@@ -24,14 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // layout.tsx
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
-      >
-        <Navbar />
-        {children}
+      <body className="bg-background antialiased">
+        <div className="h-screen flex flex-col">
+          <Navbar />
+          <div className="flex-1">{children}</div>
+        </div>
       </body>
     </html>
   );
 }
-
