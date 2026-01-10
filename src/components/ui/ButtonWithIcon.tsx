@@ -6,6 +6,7 @@ type ButtonWithIconProps = React.ComponentProps<"div">;
 export default function ButtonWithIcon({
   className,
   children,
+  onClick,
   ...props
 }: ButtonWithIconProps) {
   return (
@@ -15,6 +16,10 @@ export default function ButtonWithIcon({
         "flex gap-3 px-7 py-3 bg-brand rounded-soft text-white cursor-pointer",
         className,
       )}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClick?.(e);
+      }}
     >
       {children}
     </div>

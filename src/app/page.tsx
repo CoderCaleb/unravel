@@ -3,13 +3,11 @@ import Card from "@/components/ui/Card";
 import RoundedIconWithBackground from "@/components/ui/RoundedIconWithBackground";
 import SubtitleText from "@/components/ui/SubtitleText";
 import TitleText from "@/components/ui/TitleText";
-import { useRouter } from "next/router";
 import { LuSparkles } from "react-icons/lu";
 import { LuFolderOpen } from "react-icons/lu";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <div className="flex flex-col h-full w-full bg-background font-sans overflow-y-scroll">
       <main className="flex w-full min-h-full flex-col justify-center items-center gap-10">
@@ -21,20 +19,18 @@ export default function Home() {
         </div>
         <div className="flex text-center flex-col gap-1">
           <SubtitleText className=" text-text-secondary-color">
-            Design interactive digital cards in just minutes
+            Create digital cards that reveal themselves through interaction.
           </SubtitleText>
           <SubtitleText className=" text-text-secondary-color">
             No design skills needed, just your creativity
           </SubtitleText>
         </div>
-        <ButtonWithIcon
-          onClick={() => {
-            router.push("/templates");
-          }}
-        >
-          <p className="text-white text-normal-size font-bold">Create Card</p>
-          <LuSparkles className="h-full aspect-square" size={20} />
-        </ButtonWithIcon>
+        <Link href="/templates">
+          <ButtonWithIcon>
+            <p className="text-white text-normal-size font-bold">Create Card</p>
+            <LuSparkles className="h-full aspect-square" size={20} />
+          </ButtonWithIcon>
+        </Link>
       </main>
       <section className="px-8 flex flex-col gap-5">
         <TitleText variant="section">My Projects</TitleText>
@@ -47,7 +43,7 @@ export default function Home() {
               Your saved cards will appear here
             </SubtitleText>
             <SubtitleText variant="small" className=" text-text-muted">
-              Start creating to see your projects come to life
+              Create your first card to get started
             </SubtitleText>
           </div>
         </Card>
