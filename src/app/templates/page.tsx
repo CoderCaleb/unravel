@@ -7,6 +7,7 @@ import ButtonWithIcon from "@/components/ui/ButtonWithIcon";
 import { LuArrowRight } from "react-icons/lu";
 import { useState } from "react";
 import Link from "next/link";
+import ScrollArea from "@/components/ui/ScrollArea";
 
 export default function TemplatesPage() {
   const templates = [
@@ -45,8 +46,8 @@ export default function TemplatesPage() {
   };
 
   return (
-    <div
-      className="flex flex-col items-center p-8 bg-background min-h-screen"
+    <ScrollArea
+      className="flex flex-col items-center bg-background"
       onClick={() => setTemplateSelectedId(null)}
     >
       {/* Title */}
@@ -70,7 +71,7 @@ export default function TemplatesPage() {
       {templateSelectedId && (
         <Link href={`/create/${templateSelectedId}`}>
           <ButtonWithIcon
-            className="mt-8 absolute bottom-10"
+            className="absolute bottom-10 left-1/2 -translate-x-1/2"
             onClick={handleContinue}
           >
             <span>Continue</span>
@@ -78,6 +79,6 @@ export default function TemplatesPage() {
           </ButtonWithIcon>
         </Link>
       )}
-    </div>
+    </ScrollArea>
   );
 }

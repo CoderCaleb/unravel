@@ -26,7 +26,7 @@ export default function Home() {
           </SubtitleText>
         </div>
         <Link href="/templates">
-          <ButtonWithIcon>
+          <ButtonWithIcon onClickEnabled={false}>
             <p className="text-white text-normal-size font-bold">Create Card</p>
             <LuSparkles className="h-full aspect-square" size={20} />
           </ButtonWithIcon>

@@ -20,17 +20,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    // layout.tsx
     <html lang="en">
       <body className="bg-background antialiased">
-        <div className="h-screen flex flex-col">
-          <Navbar />
-          <div className="flex-1">{children}</div>
-        </div>
+        <Navbar />
+        <main className="h-[calc(100vh-64px)]">{children}</main>
       </body>
     </html>
   );
